@@ -1,0 +1,78 @@
+.edit-panel-title {
+  margin-bottom: 1em;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-width: 40vw;
+  padding: 1em;
+  text-align: start;
+  background-color: rgb(45, 0, 45);
+  color: white;
+  border: 1px solid rgb(90, 0, 90);
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color .4s ease-in-out
+}
+
+.dropdown-btn:hover {
+  background-color: rgb(74, 0, 74)
+}
+
+.menu {
+  position: relative;
+  background-color: rgb(30, 0, 30);
+  transform-origin: top;
+  max-width: 40vw;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out, margin 0.5s ease-in-out;  
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+input {
+  background-color: rgb(15, 0, 15);
+  border: 1px solid rgb(60, 0, 60);
+  margin-left: 10px;
+  height: 2.5em;
+  color: white;
+  padding-left: 10px;
+  border-radius: 5px;
+  width: 30vw;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: 1px solid white;
+  border-radius: 5px;
+}
+
+.menu-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+
+.menu-wrapper.is-open {
+  grid-template-rows: 1fr;
+}
+
+.menu-wrapper.is-open .menu {
+  opacity: 1;
+  transform: scaleY(1);
+  padding: 12px 16px;
+  margin-top: 5px;
+}
+
+.field-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
