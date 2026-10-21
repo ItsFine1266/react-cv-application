@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import "./styles/main.css"
 import "./styles/EditPanel.css"
+import "./styles/PreviewPanel.css"
 
 import EditPanel from './components/EditPanel'
 import PreviewPanel from './components/PreviewPanel'

@@ -10,7 +10,7 @@
   min-width: 40vw;
   padding: 1em;
   text-align: start;
-  background-color: rgb(45, 0, 45);
+  background-color: rgb(30, 0, 30);
   color: white;
   border: 1px solid rgb(90, 0, 90);
   border-radius: 10px;
@@ -20,7 +20,7 @@
 }
 
 .dropdown-btn:hover {
-  background-color: rgb(74, 0, 74)
+  background-color: rgb(50, 0, 50)
 }
 
 .menu {
@@ -29,27 +29,24 @@
   transform-origin: top;
   max-width: 40vw;
   opacity: 0;
-  transform: scaleY(0);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out, margin 0.5s ease-in-out;  
+  transition: opacity 0.5s ease-in-out;  
   border-radius: 5px;
   overflow: hidden;
-  padding: 5px;
-  margin-bottom: 5px;
+  min-height: 0;
 }
 
 input {
   background-color: rgb(15, 0, 15);
   border: 1px solid rgb(60, 0, 60);
-  margin-left: 10px;
   height: 2.5em;
   color: white;
   padding-left: 10px;
   border-radius: 5px;
-  width: 30vw;
   font-size: 1em;
+  max-width: 30vw;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: 1px solid white;
   border-radius: 5px;
 }
@@ -57,22 +54,42 @@ input:focus {
 .menu-wrapper {
   display: grid;
   grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-in-out;
+  margin: 8px 0;
 }
 
 .menu-wrapper.is-open {
   grid-template-rows: 1fr;
+  margin: 8px 0;
 }
 
 .menu-wrapper.is-open .menu {
   opacity: 1;
-  transform: scaleY(1);
-  padding: 12px 16px;
-  margin-top: 5px;
 }
 
 .field-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 30vw));
   align-items: center;
-  margin-bottom: 10px;
+  padding: 12px;
+}
+
+label {
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+textarea {
+  background-color: rgb(15, 0, 15);
+  border: 1px solid rgb(60, 0, 60);
+  color: white;
+  resize: none;
+  padding: 10px;
+  width: 35vw;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.category {
+  font-weight: bold;
 }
