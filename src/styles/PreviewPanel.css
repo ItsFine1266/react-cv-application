@@ -6,3 +6,12 @@
   padding: 1em;
   margin: 1em;
 }
+
+.email-display, .phone-display {
+  margin-left: 1.5em;
+  padding-top: 8px;
+}
+
+.email-hidden, .phone-hidden {
+  list-style-type: none;
+}

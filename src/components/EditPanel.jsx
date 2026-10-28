@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PersonalDetails() {
+function PersonalDetails({ name, onNameChange, email, onEmailChange, phone, onPhoneChange }) {
   const [isOpen, setIsOpen] = useState(true);
   const handleOpen = () => setIsOpen(!isOpen);
 
@@ -14,11 +14,11 @@ function PersonalDetails() {
         <div className="menu">
           <div key="name" className="field-item">
             <label htmlFor="name">Full Name </label>
-            <input type="text" id="name" autoComplete="false" />
+            <input type="text" id="name" autoComplete="false" value={name} onChange={(e) => onNameChange(e.target.value)}/>
             <label htmlFor="email">Email </label>
-            <input type="email" id="email" autoComplete="false" />
+            <input type="email" id="email" autoComplete="false" value={email} onChange={(e) => onEmailChange(e.target.value)}/>
             <label htmlFor="tel">Phone Number</label>
-            <input type="text" id="tel" autoComplete="false"/>
+            <input type="text" id="tel" autoComplete="false" value={phone} onChange={(e) => onPhoneChange(e.target.value)}/>
           </div>
         </div>
       </div>
@@ -124,11 +124,11 @@ function Skills() {
   )
 }
 
-export default function EditPanel() {
+export default function EditPanel({ name, onNameChange, email, onEmailChange, phone, onPhoneChange }) {
   return (
     <div className="edit-panel">
       <h1 className="edit-panel-title">CV Builder</h1>
-      <PersonalDetails />
+      <PersonalDetails name={name} onNameChange={onNameChange} email={email} onEmailChange={onEmailChange} phone={phone} onPhoneChange={onPhoneChange} />
       <AboutMe />
       <Education />
       <Experience />
