@@ -70,7 +70,7 @@ input:focus, textarea:focus {
 
 .field-item {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 30vw));
+  grid-template-columns: repeat(auto-fit, minmax(30vw, auto));
   align-items: center;
   padding: 12px;
 }

@@ -9,8 +9,12 @@
   min-height: 100vh;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   background-image: linear-gradient(to bottom, rgb(20, 1, 20), black);
   color: white;
   padding: 1em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
