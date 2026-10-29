@@ -133,28 +133,28 @@ export default function EditPanel({
   return (
     <div className="edit-panel">
       <h1 className="edit-panel-title">CV Builder</h1>
-      <PersonalDetails>
+      <PersonalDetails
         name={name} onNameChange={onNameChange} 
         email={email} onEmailChange={onEmailChange} 
-        phone={phone} onPhoneChange={onPhoneChange} 
-      </PersonalDetails>
+        phone={phone} onPhoneChange={onPhoneChange}
+      ></PersonalDetails>
 
-      <AboutMe>
+      <AboutMe
         description={description} onDescriptionChange={onDescriptionChange}
-      </AboutMe>
+      ></AboutMe>
 
-      <Education>
+      <Education
         school={school} onSchoolChange={onSchoolChange} 
         course={course} onCourseChange={onCourseChange} 
         qualification={qualification} onQualificationChange={onQualificationChange} 
-      </Education>
+      ></Education>
       
-      <Experience>
+      <Experience
         experienceTitle={experienceTitle} onExperienceTitleChange={onExperienceTitleChange} 
         dateFrom={dateFrom} onDateFromChange={onDateFromChange} 
         dateUntil={dateUntil} onDateUntilChange={onDateUntilChange} 
         experienceDescription={experienceDescription} onExperienceDescriptionChange={onDescriptionChange} 
-      </Experience>
+      ></Experience>
 
       <Skills />
     </div>

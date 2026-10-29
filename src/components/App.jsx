@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div className="container">
       <EditPanel
-        name={name} onNameChange={setName} 
+        name={name} onNameChange={setName}
         email={email} onEmailChange={setEmail}
         phone={phone} onPhoneChange={setPhone}
         description={description} onDescriptionChange={setDescription}
