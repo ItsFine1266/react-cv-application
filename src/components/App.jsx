@@ -18,6 +18,7 @@ export default function App() {
   const [dateFrom, setDateFrom] = useState("September 2nd 2021");
   const [dateUntil, setDateUntil] = useState("June 24th 2026");
   const [experienceDescription, setExperienceDescription] = useState("I was lead software engineer but got laid off cos I was apparently too good at my job and they needed someone less skilled. I made the core systems from scratch and made the bank profit over six figures, none of which was given to me. w scam");
+  const [skills, setSkills] = useState("HTML, CSS, JavaScript");
 
   return (
     <div className="container">
@@ -33,14 +34,16 @@ export default function App() {
         dateFrom={dateFrom} onDateFromChange={setDateFrom}
         dateUntil={dateUntil} onDateUntilChange={setDateUntil}
         experienceDescription={experienceDescription} onExperienceDescriptionChange={setExperienceDescription}
+        skills={skills} onSkillsChange={setSkills}
       >
       </EditPanel>
 
       <PreviewPanel 
-        name={name} email={email} phone={phone} 
+        name={name} email={email} phone={phone}
         description={description}
         school={school} course={course} qualification={qualification}
         experienceTitle={experienceTitle} dateFrom={dateFrom} dateUntil={dateUntil} experienceDescription={experienceDescription}
+        skills={skills}
       >
       </PreviewPanel>
     </div>

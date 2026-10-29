@@ -2,8 +2,9 @@ export default function PreviewPanel({
   name, email, phone, 
   description, 
   school, course, qualification, 
-  experienceTitle, dateFrom, dateUntil, experienceDescription 
-}) {  
+  experienceTitle, dateFrom, dateUntil, experienceDescription,
+  skills
+}) {
   return (
     <div className="preview-panel">
       <h1>{name || <br />}</h1>
@@ -15,8 +16,8 @@ export default function PreviewPanel({
       {
         description.length !== 0 ? 
           <>
-            <h3 className="about-me-title subheading">About Me</h3>
-            <p className="description">{description}</p>
+            <h3 className="subheading">About Me</h3>
+            <p>{description}</p>
           </>
         : ""
       }
@@ -43,6 +44,23 @@ export default function PreviewPanel({
           </>
         : ""
       }
+
+      <div className="skills">{displaySkills(skills)}</div>
     </div>
   )
+}
+
+function displaySkills(skills) {
+  let skillsArr = [];
+
+  const splitSkills = skills.trim().split(",");
+  splitSkills.forEach(skill => {
+    skillsArr.push(<Skill text={skill} key={skill}></Skill>);
+  });
+
+  return skillsArr;
+}
+
+function Skill({ text }) {
+  return <div className="skill">{text}</div>
 }

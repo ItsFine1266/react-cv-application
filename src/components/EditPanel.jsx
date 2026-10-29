@@ -102,7 +102,7 @@ function Experience({ experienceTitle, onExperienceTitleChange, dateFrom, onDate
   )
 }
 
-function Skills() {
+function Skills({ skills, onSkillsChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => setIsOpen(!isOpen);
 
@@ -116,7 +116,7 @@ function Skills() {
         <div className="menu">
           <div key="name" className="field-item">
             <label htmlFor="skills">Skills (seperate with comma) </label>
-            <input type="text" id="skills" autoComplete="false" />
+            <input type="text" id="skills" autoComplete="false" value={skills} onChange={(e) => onSkillsChange(e.target.value)} />
           </div>
         </div>
       </div>
@@ -128,7 +128,8 @@ export default function EditPanel({
   name, onNameChange, email, onEmailChange, phone, onPhoneChange, 
   description, onDescriptionChange, 
   school, onSchoolChange, course, onCourseChange, qualification, onQualificationChange, 
-  experienceTitle, onExperienceTitleChange, dateFrom, onDateFromChange, dateUntil, onDateUntilChange, experienceDescription, onExperienceDescriptionChange 
+  experienceTitle, onExperienceTitleChange, dateFrom, onDateFromChange, dateUntil, onDateUntilChange, experienceDescription, onExperienceDescriptionChange,
+  skills, onSkillsChange
 }) {
   return (
     <div className="edit-panel">
@@ -153,10 +154,12 @@ export default function EditPanel({
         experienceTitle={experienceTitle} onExperienceTitleChange={onExperienceTitleChange} 
         dateFrom={dateFrom} onDateFromChange={onDateFromChange} 
         dateUntil={dateUntil} onDateUntilChange={onDateUntilChange} 
-        experienceDescription={experienceDescription} onExperienceDescriptionChange={onDescriptionChange} 
+        experienceDescription={experienceDescription} onExperienceDescriptionChange={onExperienceDescriptionChange} 
       ></Experience>
 
-      <Skills />
+      <Skills 
+        skills={skills} onSkillsChange={onSkillsChange}
+      ></Skills>
     </div>
   )
 }

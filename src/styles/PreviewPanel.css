@@ -1,6 +1,7 @@
 .preview-panel {
   background-color: rgb(20, 0, 20);
-  max-height: 100vh;
+  max-height: 90vh;
+  min-height: fit-content;
   border: 2px solid rgb(60, 0, 60);
   border-radius: 10px;
   padding: 1em;
@@ -16,11 +17,27 @@
   list-style-type: none;
 }
 
-.about-me-title, .description, .subheading {
+.description, .subheading {
   margin-top: 10px;
 }
 
 .subheading {
   color: rgb(120, 45, 120);
   font-family: monospace;
+}
+
+.skill {
+  background-color: rgb(50, 0, 50);
+  font-family: monospace;
+  width: fit-content;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(135, 0, 135);
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
 }
